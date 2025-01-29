@@ -1,0 +1,99 @@
+<div class="fluid-container">
+    <header>
+        <h1 class="text-center">Application de réservation de bus</h1>
+    </header>
+    
+    
+    <section class="d-flex justify-content-center sectionOne">
+        <div class="selectSearchSection">
+            <div class="selectSection">
+                <select class="form-elt" [(ngModel)]="searchObj.fromLocation">
+                    <option>Lieu de départ</option>
+                    @for (item of locations; track $index) {
+                        <option [value]="item.locationId">{{item.locationName}}</option>
+                    }
+                </select>
+                <select class="form-elt" [(ngModel)]="searchObj.toLocation">
+                    <option>Destination</option>
+                    @for (item of locations ;track $index) {
+                        <option [value]="item.locationId">{{item.locationName}}</option>
+                    }
+                </select>
+                <input class="form-elt" type="date" placeholder="Date" class="form-elt" [(ngModel)]="searchObj.travelDate">
+            </div>
+            <button type="button" (click)="onSearch()">Recherche</button>
+        </div>
+    </section>
+    <section class="sectionTwo">
+        <h2 class="my-5">Bus disponibles</h2>
+    </section>
+    
+    <section class="sectionThree">
+    
+        @for (item of allSchedules; track $index) {
+            @if (isIncludedInScheduleList(item)) {
+                <div class="row-card">
+                    <div>
+                        <h6>{{item.vendorName}}</h6>
+                        <p>Nom du bus</p>
+                        <span>Nom de l'Entreprise : {{item.vendorName}}</span>
+                    </div>
+                    <div>
+                        <h6>{{item.fromLocation.locationName}}</h6>
+                        <h6>{{item.travelDate}}</h6>
+                        <p>Départ</p>
+                    </div>
+                    <div>
+                        <h6>{{item.toLocation.locationName}}</h6>
+                        <h6>{{item.arrivalDate}}</h6>
+                        <p>Arrivée</p>
+                    </div>
+                    <div>
+                        <h6>Prix</h6>
+                        <p>{{item.price}}</p>
+                    </div>
+                    <div>
+                        <h6>{{item.availableSeats}} </h6>
+                        <p>nombre de places disponibles sur {{item.totalSeats}}</p>
+                    </div>
+                    <div>
+                      <button [routerLink]="['/booking/',$index]">Réserver</button>
+                      <h1>{{$index}}</h1>
+                    </div>
+    
+                </div>
+            }
+        }
+
+
+        <!-- <div class="row-card">
+            <div>
+                <h6>eeeeeeee</h6>
+                <p>Nom du bus</p>
+                <span>Nom de l'Entreprise </span>
+            </div>
+            <div>
+                <h6>nombre de places disponib</h6>
+                <h6>nombre de places disponible</h6>
+                <p>Départ</p>
+            </div>
+            <div>
+                <h6>nombre de places dispb</h6>
+                <h6>nombrb</h6>
+                <p>Arrivée</p>
+            </div>
+            <div>
+                <h6>Prix</h6>
+                <p>nombre de places disponibles surbdbbdbdbdbbddbdb</p>
+            </div>
+            <div>
+                <h6>..... </h6>
+                <p>nombre de places disponibles surbdbbdbdbdbbddbdb</p>
+            </div>
+            <div>
+              <button [routerLink]="['/booking/',1]">Réserver</button>
+            </div>
+
+        </div> -->
+    </section>   
+</div>

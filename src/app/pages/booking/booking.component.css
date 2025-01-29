@@ -1,0 +1,15 @@
+.seat.available{
+    background-color: greenyellow;
+}
+.seat.selected{
+    background-color: red;
+}
+.seat.reserved{
+    background-color: yellow;
+}
+.myDiv{
+    height: 86vh;
+}
+.card-body a{
+    cursor: pointer;
+}

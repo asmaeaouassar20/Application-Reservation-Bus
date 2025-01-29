@@ -1,0 +1,123 @@
+<!-- 
+
+<div>
+    <p>Nom du bus</p>
+    <h4>{{selectedScheduleDetails.busName}}</h4>
+</div>
+<div>
+    <p>Lieu de Départ</p>
+    <h4>{{selectedScheduleDetails.fromLocation}}</h4>
+</div>
+<div>
+    <p>Destination</p>
+    <h4>{{selectedScheduleDetails.toLocation}}</h4>
+</div>
+<div>
+    <p>Date de Départ</p>
+    <h4>{{selectedScheduleDetails.departureTime | date : 'dd/MM/yy HH:mm:ss'}}</h4>
+</div>
+<div>
+    <p>Date d'Arrivée</p>
+    <h4>{{selectedScheduleDetails.arrivalTime  | date : 'dd/MM/yy HH:mm:ss'}}</h4>
+</div>
+
+<div>
+    <p>Prix</p>
+    <h4>{{selectedScheduleDetails.price}}</h4>
+</div>
+<div>
+    <p>Nombre de place total</p>
+    <h4>{{selectedScheduleDetails.totalSeats}}</h4>
+</div>
+<div>
+    <p>Nombre de place disponible</p>
+    <h4>{{numberAvailableSeats}}</h4>
+</div>
+<div>
+    <p>Nombre de place déjà réservées</p>
+    <h4>{{numberBookedSeats}}</h4>
+</div> -->
+
+<!-- <div>
+    <p>Nombre total de place</p>
+    <h4>==> {{selectedScheduleDetails.totalSeats}}</h4>
+</div>
+
+<div>
+    <p>Nombre de place réservées</p>
+    <h4>==> {{numberOfBookedSeats}}</h4>
+    @for (item of bookedSeatsArray; track $index) {
+        <div>inssayyyy</div>
+    }
+</div> -->
+
+<!-- 
+@for (seatNumber of seatArray; track $index) {
+    @if(checkIfSeatBooked(seatNumber)!=-1){
+        <p class="seat reserved">{{seatNumber}}</p>
+    }@else {
+        @if (checkIsSeatSelected(seatNumber)!=-1) {
+            <p class="seat selected" (click)="selectSeat(seatNumber)">{{seatNumber}}</p>
+        }@else {
+            <p class="seat available" (click)="selectSeat(seatNumber)">{{seatNumber}}</p>
+        }
+    }
+    
+} -->
+
+<!-- @for (item of userSelectedSeatArray; track $index) {
+    <div class="row">
+        <div class="col-3">
+            <label>Nom du Passager</label>
+            <input [(ngModel)]="item.name" type="text" class="form-control">
+        </div> 
+        <div class="col-3">
+            <label>Age du Passager</label>
+            <input [(ngModel)]="item.age" type="number" class="form-control">
+        </div> 
+        <div class="col-3">
+            <label>Genre du Passager</label>
+            <input [(ngModel)]="item.gender" value="homme" type="radio" class="form-control">
+            <input [(ngModel)]="item.gender" value="femme" type="radio" class="form-control">
+        </div>
+        <div class="col-3">
+            <label>Numéro de Place</label>
+            <input [(ngModel)]="item.seatNumber" type="number" class="form-control">
+        </div>
+    </div>
+}
+
+
+
+<button (click)="bookNow()">Réserver Maintenant</button> -->
+
+
+
+<div class="d-flex justify-content-center align-items-center bg-primary myDiv">
+@for (schedule of scheduleList; track $index) {
+   @if ($index==scheduleId) {
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">{{schedule.vendorName}}</h5>
+              <p class="card-text">{{schedule.fromLocation.locationName}} vers {{schedule.toLocation.locationName}}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Départ de {{schedule.fromLocation.locationName}} à {{schedule.travelDate}}</li>
+              <li class="list-group-item">Arrivée : {{schedule.toLocation.locationName}} à {{schedule.arrivalDate}}</li>
+              <li class="list-group-item">Prix : {{schedule.price}}</li>
+              <li class="list-group-item">Nombre total de places : {{schedule.totalSeats}}</li>
+              <li class="list-group-item">Nombre de Places disponibles : {{schedule.availableSeats}}</li>
+              <li class="list-group-item">
+                Entrez le nombre de place à réserver
+                <input type="number" class="form-control" [max]="schedule.availableSeats" [min]="1" [(ngModel)]="numberOfBookedSeats">
+              </li>
+            </ul>
+            <div class="card-body">
+              <a class="card-link" routerLink="/search">Annuler</a>
+              <a class="card-link" (click)="book(schedule)">Réserver</a>
+            </div>
+          </div>
+   }
+}
+</div>
+

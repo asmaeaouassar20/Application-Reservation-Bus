@@ -1,0 +1,79 @@
+.container{
+    background-color: #fff;
+}
+header{
+    /* background-color: red; */
+    padding: 20px;
+    /* margin: 40px; */
+    border-top:2px solid #88888864;
+    border-bottom:2px solid #88888864;
+    margin:10px 100px 50px 100px;
+}
+.sectionOne{
+    /* background-color: yellow; */
+}
+.selectSearchSection{
+    background-color: #0088a9;
+    display: flex;
+    justify-content: center;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-top-right-radius:8px ;
+    border-bottom-right-radius:8px ;
+
+    padding: 8px;
+    box-shadow: 0 0 12px #ff000079;
+}
+
+.selectSection{
+    padding: 40px;
+}
+.form-elt{
+    margin: 2px;
+    outline: none;
+}
+
+.sectionThree{
+
+}
+
+
+
+/* styler la table */
+.sectionTwo{
+    /* background-color: aqua; */
+   text-align: center;
+}
+.row-card{
+    display: flex;
+    justify-content: space-between;
+    /* background-color: pink; */
+    margin: 50px;
+    padding: 30px;
+    box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+    border-radius: 10px;
+}
+.row-card div{
+    /* display: inline; */
+    text-align: center;
+    border-right: 1px solid #88888864;
+    padding-right: 4px;
+}
+
+.selectSection .form-elt{
+   border: none;
+   border-radius: 10px;
+   padding: 5px;
+   margin: 2px;
+}
+.selectSearchSection button{
+    border: none;
+    border-radius:8px ;
+    padding: 18px;
+    background-color: rgb(254, 249, 254);
+    transition: .3s all;
+}
+.selectSearchSection button:hover{
+    background-color: rgb(241, 237, 241);
+    transform: scale(1.05);
+}

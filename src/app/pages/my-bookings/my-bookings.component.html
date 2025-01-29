@@ -1,0 +1,20 @@
+<div class="container">
+    <h1 class="text-center mt-5">Mes Réservations</h1>
+    @for (item of myBookings; track $index) {
+        <div class="card text-center">
+            <div class="card-header">
+             {{item.schedule.vendorName}}
+            </div>
+            <div class="card-body">
+              <p class="card-text">vous avez réservé {{item.numberOfBookedSeats}} {{item.numberOfBookedSeats==1 ? 'place':'places'}}</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+              Départ de {{item.schedule.fromLocation.locationName}} à {{item.schedule.travelDate}}
+            </div>
+            <div class="card-footer text-body-secondary">
+              Arrivée à {{item.schedule.toLocation.locationName}} à {{item.schedule.arrivalDate}}
+            </div>
+          </div>
+    }
+    
+</div>
