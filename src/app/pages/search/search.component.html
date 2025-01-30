@@ -2,11 +2,11 @@
     <header>
         <h1 class="text-center">Application de réservation de bus</h1>
     </header>
+     
     
-    
-    <section class="d-flex justify-content-center sectionOne">
+    <section class="d-flex justify-content-center">
         <div class="selectSearchSection">
-            <div class="selectSection">
+            <div class="selectSection ">
                 <select class="form-elt" [(ngModel)]="searchObj.fromLocation">
                     <option>Lieu de départ</option>
                     @for (item of locations; track $index) {
@@ -24,6 +24,7 @@
             <button type="button" (click)="onSearch()">Recherche</button>
         </div>
     </section>
+
     <section class="sectionTwo">
         <h2 class="my-5">Bus disponibles</h2>
     </section>
@@ -33,32 +34,31 @@
         @for (item of allSchedules; track $index) {
             @if (isIncludedInScheduleList(item)) {
                 <div class="row-card">
-                    <div>
+                    <div class="myDiv1">
                         <h6>{{item.vendorName}}</h6>
                         <p>Nom du bus</p>
                         <span>Nom de l'Entreprise : {{item.vendorName}}</span>
                     </div>
-                    <div>
+                    <div class="myDiv2">
                         <h6>{{item.fromLocation.locationName}}</h6>
                         <h6>{{item.travelDate}}</h6>
                         <p>Départ</p>
                     </div>
-                    <div>
+                    <div class="myDiv3">
                         <h6>{{item.toLocation.locationName}}</h6>
                         <h6>{{item.arrivalDate}}</h6>
                         <p>Arrivée</p>
                     </div>
-                    <div>
+                    <div class="myDiv4">
                         <h6>Prix</h6>
                         <p>{{item.price}}</p>
                     </div>
-                    <div>
+                    <div class="myDiv5">
                         <h6>{{item.availableSeats}} </h6>
                         <p>nombre de places disponibles sur {{item.totalSeats}}</p>
                     </div>
-                    <div>
-                      <button [routerLink]="['/booking/',$index]">Réserver</button>
-                      <h1>{{$index}}</h1>
+                    <div class="myDiv6 d-flex justify-content-center align-items-center">
+                      <button [routerLink]="['/booking/',$index]" class="rounded btn">Réserver</button>
                     </div>
     
                 </div>

@@ -2,15 +2,10 @@
     background-color: #fff;
 }
 header{
-    /* background-color: red; */
     padding: 20px;
-    /* margin: 40px; */
     border-top:2px solid #88888864;
     border-bottom:2px solid #88888864;
-    margin:10px 100px 50px 100px;
-}
-.sectionOne{
-    /* background-color: yellow; */
+    margin:28px 100px 50px 100px;
 }
 .selectSearchSection{
     background-color: #0088a9;
@@ -20,11 +15,9 @@ header{
     border-bottom-left-radius: 80px;
     border-top-right-radius:8px ;
     border-bottom-right-radius:8px ;
-
     padding: 8px;
     box-shadow: 0 0 12px #ff000079;
 }
-
 .selectSection{
     padding: 40px;
 }
@@ -33,33 +26,23 @@ header{
     outline: none;
 }
 
-.sectionThree{
-
-}
-
-
-
 /* styler la table */
 .sectionTwo{
-    /* background-color: aqua; */
    text-align: center;
-}
+} 
 .row-card{
     display: flex;
     justify-content: space-between;
-    /* background-color: pink; */
     margin: 50px;
     padding: 30px;
     box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
     border-radius: 10px;
 }
 .row-card div{
-    /* display: inline; */
     text-align: center;
     border-right: 1px solid #88888864;
     padding-right: 4px;
 }
-
 .selectSection .form-elt{
    border: none;
    border-radius: 10px;
@@ -76,4 +59,175 @@ header{
 .selectSearchSection button:hover{
     background-color: rgb(241, 237, 241);
     transform: scale(1.05);
+}
+.row-card button{
+    border: none;
+    background-color: #0088a9;
+    color: #fff;
+}
+
+@media (max-width:621px){
+    .selectSection{
+        padding: 20px;
+    }
+}
+@media (max-width:577px){
+    .selectSection{
+        padding: 10px;
+    }
+}
+@media (max-width:551px){
+    .selectSection{
+        padding: 10px;
+    }
+}
+@media (max-width:539px){
+    .selectSection{
+        padding: 5px;
+    }
+}
+@media (max-width:408px){
+    .selectSection{
+        padding: 0px;
+    }
+    .selectSearchSection{
+        background-color: #0088a9;
+        display: flex;
+        justify-content: center;
+       border-radius: 8px;
+        padding: 8px;
+        box-shadow: 0 0 12px #ff000079;
+    }
+}
+@media (max-width:308px) {
+    .selectSearchSection button{
+        padding: 8px;
+    }
+}
+@media (max-width:1016px) {
+    .row-card{
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+        border-radius: 10px;
+    }
+    .row-card .myDiv6{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+}
+@media (max-width:833px) {
+    .row-card{
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+        border-radius: 10px;
+    }
+    .row-card .myDiv6{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv5{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+}
+@media (max-width:833px) {
+    .row-card{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+        border-radius: 10px;
+    }
+    .row-card .myDiv6{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv5{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv4{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width:531px) {
+    .row-card{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+        border-radius: 10px;
+    }
+    .row-card .myDiv6{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv5{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv4{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv3{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width:376px) {
+    .row-card{
+        display: grid;
+        grid-template-columns:1fr;
+        margin: 50px;
+        padding: 30px;
+        box-shadow: 2px -2px 12px rgba(184, 183, 183, 0.507);
+        border-radius: 10px;
+    }
+    .row-card .myDiv6{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv5{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv4{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv3{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
+    .row-card .myDiv2{
+        text-align: center;
+        border-top: 1px solid #88888864;
+        padding-top: 20px;
+    }
 }

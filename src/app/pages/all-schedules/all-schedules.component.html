@@ -1,0 +1,46 @@
+<div class="monConteneur">
+  @for (schedule of allSchedules; track $index) {
+  <div class="card m-5">
+    <div class="card-body">
+      <h5 class="card-title text-light">{{schedule.vendorName}}</h5>
+      <h6 class="card-subtitle mb-2 text-info ">{{schedule.price}} DH</h6>
+      <div class="card-text">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th>Lieu de Départ</th>
+              <th>{{schedule.fromLocation.locationName}}</th>
+            </tr>
+
+            <tr>
+              <th>Destination</th>
+              <th>{{schedule.toLocation.locationName}}</th>
+            </tr>
+
+            <tr>
+              <th>Date de Départ</th>
+              <th>{{schedule.travelDate}}</th>
+            </tr>
+
+            <tr>
+              <th>Date d'Arrivée</th>
+              <th>{{schedule.arrivalDate}}</th>
+            </tr>
+
+            <tr>
+              <th>Nombre Total de Places</th>
+              <th>{{schedule.totalSeats}}</th>
+            </tr>
+
+            <tr>
+              <th>Nombre de Places Disponible</th>
+              <th>{{schedule.availableSeats}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <a [routerLink]="['/booking/',$index]" class="card-link text-light">Réserver</a>
+    </div>
+  </div>
+  }
+</div>

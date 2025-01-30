@@ -15,10 +15,11 @@ export class SearchComponent implements OnInit{
 
   locations : LocationObj[]=[];
   masterService=inject(MasterService);
-  scheduleList:Schedule[]=[]; //lorsqu'on clique sur le bouton 'search'
+  scheduleList:Schedule[]=[]; // Résultat de la recherche 'search'
   allSchedules:Schedule[]=[];
 
   // Object that we are going to bind to HTML
+  // Objet lié au formulaire de recherche
   searchObj : any = {
     fromLocation:0,
     toLocation:0,
@@ -40,8 +41,7 @@ export class SearchComponent implements OnInit{
 
   onSearch(){
     const {fromLocation,toLocation,travelDate}=this.searchObj;
-    this.scheduleList=this.masterService.searchBus(fromLocation,toLocation,travelDate);
- 
+    this.scheduleList=this.masterService.searchBus(fromLocation,toLocation,travelDate); 
   }
   isIncludedInScheduleList(schedule:Schedule): boolean{
     return this.masterService.isExist(schedule,this.scheduleList);

@@ -1,15 +1,15 @@
-.seat.available{
-    background-color: greenyellow;
-}
-.seat.selected{
-    background-color: red;
-}
-.seat.reserved{
-    background-color: yellow;
-}
 .myDiv{
-    height: 86vh;
+    height: 95vh;
 }
 .card-body a{
     cursor: pointer;
+}
+.card{
+    border: 5px solid #0088a9;;
+}
+
+@media (max-width:320px) {
+    .myDiv{
+       font-size: 11px;
+    } 
 }

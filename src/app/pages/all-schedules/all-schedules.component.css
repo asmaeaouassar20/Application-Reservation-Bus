@@ -1,0 +1,21 @@
+.monConteneur{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.card{
+    background-color: #0088a9;
+}
+
+@media (max-width:1276px) {
+    .monConteneur{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}
+@media (max-width:890px) {
+    .monConteneur{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+

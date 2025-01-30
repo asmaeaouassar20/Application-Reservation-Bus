@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { SearchComponent } from './pages/search/search.component';
 import { BookingComponent } from './pages/booking/booking.component';
 import { MyBookingsComponent } from './pages/my-bookings/my-bookings.component';
+import { AllSchedulesComponent } from './pages/all-schedules/all-schedules.component';
 
 export const routes: Routes = [
     {
@@ -20,6 +21,11 @@ export const routes: Routes = [
     {
         path:'my-bookings',
         component:MyBookingsComponent
+    },
+    {
+        path:'all-schedules',
+        component:AllSchedulesComponent
     }
-
+    
+    
 ];

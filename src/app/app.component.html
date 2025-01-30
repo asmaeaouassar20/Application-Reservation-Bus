@@ -9,14 +9,17 @@
       <ul class="nav_links">
         <li><a routerLink="/search">Chercher des réservations</a></li>
         <li><a routerLink="/my-bookings">mes réservations</a></li>
+        <li><a routerLink="/all-schedules">calendrier</a></li>
       </ul>
     </nav>
+   <p>
     @if (someOneIsLoggedIn) {
       <span class="text-light">{{connectedUserName}}</span>
       <button (click)="logoff()">LogOff</button>
     }@else {
       <button (click)="openModel()">Login/SignUp</button>
-    }   
+    }  
+   </p> 
   </header>
 
 </div>

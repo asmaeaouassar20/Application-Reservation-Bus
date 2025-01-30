@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { LoginUser, RegisterUser, ReturnLoginUser } from './model/model';
+import { RouterLink, RouterOutlet,Router } from '@angular/router';
+import { LoginUser, RegisterUser } from './model/model';
 import { FormsModule } from '@angular/forms';
 import { MasterService } from './service/master.service';
 import { NgIf } from '@angular/common';
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit{
   isLoginForm:boolean=true;
   masterService = inject(MasterService);
   connectedUserName:string='';
-  // router=inject(Router);
+  router=inject(Router);
 
   loginMode:boolean=true;
   someOneIsLoggedIn:boolean=false;
@@ -49,6 +49,7 @@ export class AppComponent implements OnInit{
     if(localUserConnected!=null){
       this.loggedUserData=JSON.parse(localUserConnected);
       this.someOneIsLoggedIn=true;
+      this.connectedUserName=this.loggedUserData.userName;
     }
   }
 
@@ -95,6 +96,7 @@ export class AppComponent implements OnInit{
   logoff(){
     localStorage.removeItem('currentUser');
     this.someOneIsLoggedIn=false;
+    this.router.navigate(['/search'])
   }
 
 }
